@@ -1,4 +1,4 @@
-# Cross-View Open World Object Detection in Aerial Imagery
+# Cross-View Open World Object Detection in Aerial Imagery
 
 ## Installations
 ````
