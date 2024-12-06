@@ -44,7 +44,7 @@ Download baseline weights trained on the COCO dataset and place in 'models' dire
 Run:
 ````
 python -u train_net.py --num-gpus 2 \
-    --config-file configs/owlvit.xview.yaml \
+    --config-file configs/owlvit_xview.yaml \
     MODEL.WEIGHTS AerialOpenWorldDetection/models/owlvit_lvis.pth \
     OUTPUT_DIR AerialOpenWorldDetection/output
 ````
@@ -53,7 +53,7 @@ python -u train_net.py --num-gpus 2 \
 Run:
 ````
 python train_net.py --num-gpus 2 \
-    --config-file configs/aerialopenworlddetection.xview.yaml \
+    --config-file configs/aerialopenworlddetection_xview.yaml \
     --eval-only MODEL.WEIGHTS AerialOpenWorldDetection/output/aerialopenworlddetection_xview.pth
 ````
 
