@@ -39,7 +39,7 @@ pip install geopandas
 Move the downloaded .json files to 'datasets/xview/annotations' directory.
 
 ## Training
-Download baseline weights trained on the COCO dataset and place in 'models' directory: [Google Drive](https://drive.google.com/file/d/1Bd0K5aOqaNaRdQZNl30kzsbNRq4P_n00/view?usp=drive_link) <br>
+Download baseline weights trained on the LVIS dataset and place in 'models' directory: [Google Drive](https://drive.google.com/file/d/1Bd0K5aOqaNaRdQZNl30kzsbNRq4P_n00/view?usp=drive_link) <br>
 
 Run:
 ````
