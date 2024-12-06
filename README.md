@@ -8,7 +8,7 @@ conda install pytorch=1.13.0 torchvision -c pytorch -c nvidia
 conda install -c fvcore -c iopath -c conda-forge fvcore iopath
 ````
 ````
-cd DiffusionDetXView
+cd AerialOpenWorldDetection
 git clone https://github.com/facebookresearch/detectron2.git
 python -m pip install -e detectron2
 ````
@@ -44,22 +44,21 @@ Download baseline weights trained on the COCO dataset and place in 'models' dire
 Run:
 ````
 python -u train_net.py --num-gpus 2 \
-    --config-file configs/diffdet.xview.res50.yaml \
-    MODEL.WEIGHTS DiffusionDetXView/models/diffdet_coco_res50.pth \
-    OUTPUT_DIR DiffusionDetXView/output
+    --config-file configs/owlvit.xview.yaml \
+    MODEL.WEIGHTS AerialOpenWorldDetection/models/diffdet_coco_res50.pth \
+    OUTPUT_DIR AerialOpenWorldDetection/output
 ````
 
 ## Evaluation 
 Run:
 ````
 python train_net.py --num-gpus 2 \
-    --config-file configs/diffdet.xview.res50.yaml \
-    --eval-only MODEL.WEIGHTS DiffusionDetXView/output/diffdet_xview_res50.pth
+    --config-file configs/aerialopenworlddetection.xview.yaml \
+    --eval-only MODEL.WEIGHTS AerialOpenWorldDetection/output/aerialopenworlddetection_xview.pth
 ````
 
 ## Pre-trained weights
-Trained weights on XView1: [ResNet50](https://drive.google.com/file/d/1Nz5KiudBO5PBc3hN1xaBIMF1exMRE2lV/view?usp=sharing) 
-[SWIN-B](https://drive.google.com/file/d/1yTKCFWiY6YTUzA_Ep2Wwb5MWV20IHsaM/view?usp=sharing)
+Trained weights on XView1: [Link](https://drive.google.com/file/d/1Nz5KiudBO5PBc3hN1xaBIMF1exMRE2lV/view?usp=sharing)
 <br>
 
 
