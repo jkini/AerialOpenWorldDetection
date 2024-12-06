@@ -45,7 +45,7 @@ Run:
 ````
 python -u train_net.py --num-gpus 2 \
     --config-file configs/owlvit.xview.yaml \
-    MODEL.WEIGHTS AerialOpenWorldDetection/models/diffdet_coco_res50.pth \
+    MODEL.WEIGHTS AerialOpenWorldDetection/models/owlvit_lvis.pth \
     OUTPUT_DIR AerialOpenWorldDetection/output
 ````
 
