@@ -1,4 +1,4 @@
-# DiffusionDetXView
+# Cross-View Open World Object Detection in Aerial Imagery
 
 ## Installations
 ````
