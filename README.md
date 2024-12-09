@@ -2,8 +2,8 @@
 
 ## Installations
 ````
-conda create -n owl python=3.11.4
-conda activate owl
+conda create -n aerialopenworlddet python=3.11.4
+conda activate aerialopenworlddet
 conda install pytorch=2.0.1 torchvision=0.15.2 torchaudio=2.0.2 pytorch-cuda=11.8 -c pytorch -c nvidia
 conda install -c anaconda numpy    
 conda install -c conda-forge matplotlib
