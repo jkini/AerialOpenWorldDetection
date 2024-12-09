@@ -19,38 +19,33 @@ pip install scikit-image
 pip install pandas
 ````
 ## Dataset preparation
-1. Download the following components of the XView1 dataset from the [official website](https://challenge.xviewdataset.org/download-links): [Training Images] <br>
+1. Download the following components of the XView dataset from the [official website](https://challenge.xviewdataset.org/download-links): [Training Images] <br>
 
-2. Next, download the **XView1 training labels split into train and validation sets, and modified to COCO format**: 
-[train.json](https://drive.google.com/file/d/1-WtULLdnCUL73NuVCheM3cYZfwUB3hem/view?usp=drive_link) 
-[val.json](https://drive.google.com/file/d/1IAMYfXmp3L3fzHp-vnN6bRp2BiHxf4ko/view?usp=drive_link).
-Move the downloaded .json files to 'datasets/xview/annotations' directory.
+2. Next, download the **XView training labels split into train and validation sets, and modified to COCO format**: 
+[train.json](https://drive.google.com/drive/folders/1cFSpglnlxWvTxD9_5d3DrR8LldLXqpf5?usp=sharing) 
+[val.json](https://drive.google.com/drive/folders/1cFSpglnlxWvTxD9_5d3DrR8LldLXqpf5?usp=sharing).
+Move the downloaded .json files to './datasets/' directory.
 
 ## Training
-Download baseline weights trained on the LVIS dataset and place in 'models' directory: [Google Drive](https://drive.google.com/file/d/1Bd0K5aOqaNaRdQZNl30kzsbNRq4P_n00/view?usp=drive_link) <br>
-
-Run:
 ````
-python -u train_net.py --num-gpus 2 \
-    --config-file configs/owlvit_xview.yaml \
-    MODEL.WEIGHTS AerialOpenWorldDetection/models/owlvit_lvis.pth \
-    OUTPUT_DIR AerialOpenWorldDetection/output
+python -m torch.distributed.run \
+    --nproc_per_node=1 train.py \
+    --train_annotations_file "./datasets/train.json" \
+    --val_annotations_file "./datasets/val.json" \
+    --img_dir "./datasets/XView/train_images" \
+    --batch_size 8 --num_workers 4 --epochs 100
 ````
 
 ## Evaluation 
-Run:
 ````
-python train_net.py --num-gpus 2 \
-    --config-file configs/aerialopenworlddetection_xview.yaml \
-    --eval-only MODEL.WEIGHTS AerialOpenWorldDetection/output/aerialopenworlddetection_xview.pth
+python -m torch.distributed.run \
+    --nproc_per_node=1 eval.py \
+    --eval-only MODEL.WEIGHTS ./output/aerialopenworlddet_xview.pth
 ````
 
 ## Pre-trained weights
-Trained weights on XView1: [Link](https://drive.google.com/file/d/1Nz5KiudBO5PBc3hN1xaBIMF1exMRE2lV/view?usp=sharing)
+Trained weights on XView: [Link](https://drive.google.com/drive/folders/1cFSpglnlxWvTxD9_5d3DrR8LldLXqpf5?usp=sharing)
 <br>
-
 
 ## Contact
 If you have any inquiries or require assistance, please reach out to Jyoti Kini (jyoti.kini@ucf.edu).
-
-
