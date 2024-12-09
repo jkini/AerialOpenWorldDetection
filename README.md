@@ -40,7 +40,7 @@ python -m torch.distributed.run \
 ````
 python -m torch.distributed.run \
     --nproc_per_node=1 eval.py \
-    --eval-only MODEL.WEIGHTS ./output/aerialopenworlddet_xview.pth
+    --eval-only MODEL.WEIGHTS ./output/best_epoch.pth
 ````
 
 ## Pre-trained weights
